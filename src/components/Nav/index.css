@@ -19,6 +19,6 @@ div.nav-icon > button.btn {
 .default > svg {
     color: gray;
 }
-#links > .nav-item > a.nav-link {
+#links > a {
     color: white;
 }

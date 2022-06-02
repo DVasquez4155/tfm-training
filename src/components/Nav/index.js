@@ -17,9 +17,9 @@ function Nav(props) {
                         Join Session
                     </Button>
                     </li> */}
-                    <li className="mr-3 nav-item" role="presentation">
                     <Link variant="outline-*" className="nav-link" to="/">Home</Link>
-                    </li>
+                    <a variant="outline-*" className="nav-link" href="https://dvasquez4155.github.io/Closing-Report/">Closing Report</a>
+                    {/* <Link variant="outline-*" className="nav-link" to="/">Testing</Link> */}
                 </ul>
                 </div>
             </div>
