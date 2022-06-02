@@ -19,11 +19,12 @@ function App() {
       <Nav />
       <div className="App col-lg-12 mx-auto p-2 py-md-5">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/food" element={<Food />} />
-          <Route path="/specs" element={<Specs />} />
-          <Route path="/cocktail" element={<Cocktail />} />
-          <Route path="/wine" element={<Wine />} />
+          <Route path="" element={<Home />} />
+          <Route path="tfm-training" element={<Home />} />
+          <Route path="food" element={<Food />} />
+          <Route path="specs" element={<Specs />} />
+          <Route path="cocktail" element={<Cocktail />} />
+          <Route path="wine" element={<Wine />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

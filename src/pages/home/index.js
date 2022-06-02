@@ -19,7 +19,7 @@ function Nav(props) {
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <Button variant="primary" href="/food">View</Button>
+                        <Button variant="primary" href="food">View</Button>
                     </Card.Footer>
                 </Card>
                 <Card >
@@ -32,7 +32,7 @@ function Nav(props) {
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <Button variant="primary"  href="/specs">View</Button>
+                        <Button variant="primary"  href="specs">View</Button>
                     </Card.Footer>
                 </Card>
                 <Card>
@@ -45,7 +45,7 @@ function Nav(props) {
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <Button variant="primary"  href="/cocktail">View</Button>
+                        <Button variant="primary"  href="cocktail">View</Button>
                     </Card.Footer>
                 </Card>
                 <Card>
@@ -58,7 +58,7 @@ function Nav(props) {
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <Button variant="primary"  href="/wine">View</Button>
+                        <Button variant="primary"  href="./wine">View</Button>
                     </Card.Footer>
                 </Card>
             </CardGroup>

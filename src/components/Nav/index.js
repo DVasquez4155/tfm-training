@@ -8,7 +8,7 @@ function Nav(props) {
         <main>
         <nav className="navbar navbar-dark navbar-expand-lg bg-dark ">
             <div className="container">
-                <a className="navbar-brand logo" href="/">
+                <a className="navbar-brand logo" href="/tfm-training">
                 Training{" "}
                 </a>
                 
@@ -20,7 +20,7 @@ function Nav(props) {
                     </Button>
                     </li> */}
                     <li className="mr-3 nav-item" role="presentation">
-                    <Button variant="outline-*" className="nav-link" href="/">
+                    <Button variant="outline-*" className="nav-link" href="/tfm-training">
                         Home
                     </Button>
                     </li>
