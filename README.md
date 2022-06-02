@@ -1,7 +1,7 @@
 # TFM Training
-![Followers](https://img.shields.io/github/followers/DVasquez4155?style=social) ![License](https://img.shields.io/github/license/DVasquez4155/dvasquez4155.github.io) ![Language](https://img.shields.io/github/languages/top/DVasquez4155/dvasquez4155.github.io) ![Latest Commit](https://img.shields.io/github/last-commit/DVasquez4155/dvasquez4155.github.io)
+![Followers](https://img.shields.io/github/followers/DVasquez4155?style=social) ![License](https://img.shields.io/github/license/DVasquez4155/dvasquez4155.github.io) ![Language](https://img.shields.io/github/languages/top/DVasquez4155/tfm-training) ![Latest Commit](https://img.shields.io/github/last-commit/DVasquez4155/tfm-training)
 ## Description
-[![Image that shows the project](./assets/img/icon.png)](https://DVasquez4155.github.io/dvasquez4155.github.io)
+[![Image that shows the project](./assets/img/icon.png)](https://DVasquez4155.github.io/tfm-training)
 
 A website that:
 * Helps train new staff members with specifications
