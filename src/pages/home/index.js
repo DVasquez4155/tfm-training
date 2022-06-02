@@ -2,7 +2,7 @@ import React from "react";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { CardGroup } from "react-bootstrap";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 
 function Nav(props) {
@@ -19,7 +19,8 @@ function Nav(props) {
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <Button variant="primary" href="food">View</Button>
+                        <Link variant="outline-*" className="navbar-brand logo" to="/food"><Button variant="primary">View</Button></Link>
+                        
                     </Card.Footer>
                 </Card>
                 <Card >
@@ -32,7 +33,7 @@ function Nav(props) {
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <Button variant="primary"  href="specs">View</Button>
+                        <Link variant="outline-*" className="navbar-brand logo" to="/specs"><Button variant="primary">View</Button></Link>
                     </Card.Footer>
                 </Card>
                 <Card>
@@ -45,7 +46,7 @@ function Nav(props) {
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <Button variant="primary"  href="cocktail">View</Button>
+                        <Link variant="outline-*" className="navbar-brand logo" to="/cocktail"><Button variant="primary">View</Button></Link>
                     </Card.Footer>
                 </Card>
                 <Card>
@@ -58,7 +59,7 @@ function Nav(props) {
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <Button variant="primary"  href="./wine">View</Button>
+                        <Link variant="outline-*" className="navbar-brand logo" to="/wine"><Button variant="primary">View</Button></Link>
                     </Card.Footer>
                 </Card>
             </CardGroup>

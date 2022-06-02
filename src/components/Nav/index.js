@@ -1,5 +1,6 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
 
 require('./index.css')
 
@@ -8,10 +9,7 @@ function Nav(props) {
         <main>
         <nav className="navbar navbar-dark navbar-expand-lg bg-dark ">
             <div className="container">
-                <a className="navbar-brand logo" href="/tfm-training">
-                Training{" "}
-                </a>
-                
+                <Link variant="outline-*" className="navbar-brand logo" to="/">Training</Link>
                 <div id="navbarNav">
                 <ul id="links" className="nav  ml-auto">
                     {/* <li className="nav-item" role="presentation">
@@ -20,9 +18,7 @@ function Nav(props) {
                     </Button>
                     </li> */}
                     <li className="mr-3 nav-item" role="presentation">
-                    <Button variant="outline-*" className="nav-link" href="/tfm-training">
-                        Home
-                    </Button>
+                    <Link variant="outline-*" className="nav-link" to="/">Home</Link>
                     </li>
                 </ul>
                 </div>

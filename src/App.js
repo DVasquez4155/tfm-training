@@ -1,8 +1,8 @@
 // import logo from './logo.svg';
 import {
-  BrowserRouter as Router,
   Routes,
-  Route
+  Route,
+  HashRouter
 } from "react-router-dom";
 import './App.css';
 import Nav from "./components/Nav";
@@ -15,12 +15,11 @@ import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <Router>
+    <HashRouter basename="/">
       <Nav />
       <div className="App col-lg-12 mx-auto p-2 py-md-5">
         <Routes>
-          <Route path="" element={<Home />} />
-          <Route path="tfm-training" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="food" element={<Food />} />
           <Route path="specs" element={<Specs />} />
           <Route path="cocktail" element={<Cocktail />} />
@@ -33,7 +32,7 @@ function App() {
           Created by Daniel Vasquez · © 2022
         </footer>
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
