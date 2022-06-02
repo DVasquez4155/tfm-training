@@ -12,11 +12,6 @@ function Nav(props) {
                 <Link variant="outline-*" className="navbar-brand logo" to="/">Training</Link>
                 <div id="navbarNav">
                 <ul id="links" className="nav  ml-auto">
-                    {/* <li className="nav-item" role="presentation">
-                    <Button variant="outline-*" className="nav-link" href="/login">
-                        Join Session
-                    </Button>
-                    </li> */}
                     <Link variant="outline-*" className="nav-link" to="/">Home</Link>
                     <a variant="outline-*" className="nav-link" href="https://dvasquez4155.github.io/Closing-Report/">Closing Report</a>
                     {/* <Link variant="outline-*" className="nav-link" to="/">Testing</Link> */}
