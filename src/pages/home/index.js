@@ -19,6 +19,9 @@ function Nav(props) {
                     </Card.Text>
                 </Card.Body>
                 <Card.Footer>
+                    <Card.Text>
+                    **In Progress**
+                    </Card.Text>
                     <Link variant="outline-*" className="navbar-brand logo" to="/food"><Button variant="primary">View</Button></Link>
                     
                 </Card.Footer>
