@@ -17,17 +17,15 @@ class index extends React.Component {
         return (
             <>
                 <Form.Select aria-label="Default select example" onChange={this.handleChange}>
-                    <option value="Chardonnay">Chardonnay</option>
-                    <option value="Sauvignon Blanc">Sauvignon Blanc</option>
-                    <option value="Other Whites">Other Whites</option>
-                    <option value="Bubbles">Bubbles</option>
-                    <option value="Cabernet Sauvignon">Cabernet Sauvignon</option>
-                    <option value="Pinot Noir">Pinot Noir</option>
-                    <option value="Other Reds">Other Reds</option>
+                    {Object.keys(specs).map((desc, descKey) => {
+                        return(
+                            <option key={descKey} value={desc}>{desc}</option>
+                        )
+                        
+                    })}
                 </Form.Select>
                 <br />
                 <div className="row">
-                    
                     {specs[this.state.value]?.map((data, key) => {
                         return (
                             <div className="col-sm-4" key={key}>
