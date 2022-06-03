@@ -1,32 +1,19 @@
 import React from "react";
-import { Card, Form, ListGroup } from "react-bootstrap";
+import { Card, ListGroup } from "react-bootstrap";
 // import Button from 'react-bootstrap/Button';
-import specs from '../../db/food.json';
+import specs from '../../db/cocktails.json';
 
 class index extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {value: 'Testing'};
-
-        this.handleChange = this.handleChange.bind(this);
-    }
-    handleChange(event) {
-        this.setState({value: event.target.value});
-    }
     render() {
         return (
             <>
-                <Form.Select aria-label="Default select example" onChange={this.handleChange}>
-                    {Object.keys(specs).map((desc, descKey) => {
-                        return(
-                            <option key={descKey} value={desc}>{desc}</option>
-                        )
-                        
-                    })}
-                </Form.Select>
                 <br />
+                <h1 className="App-header">
+                    Cocktails
+                </h1>
+                <hr />
                 <div className="row">
-                    {specs[this.state.value]?.map((data, key) => {
+                    {specs.map((data, key) => {
                         return (
                             <div className="col-sm-4" key={key}>
                             <Card className="m-1" bg={"Light"}>
