@@ -19,7 +19,7 @@ class index extends React.Component {
                 <Form.Select aria-label="Default select example" onChange={this.handleChange}>
                     <option value="Chardonnay">Chardonnay</option>
                     <option value="Sauvignon Blanc">Sauvignon Blanc</option>
-                    <option value="White">White</option>
+                    <option value="Other Whites">Other Whites</option>
                     <option value="Bubbles">Bubbles</option>
                     <option value="Cabernet Sauvignon">Cabernet Sauvignon</option>
                     <option value="Pinot Noir">Pinot Noir</option>
@@ -35,7 +35,7 @@ class index extends React.Component {
                                 <Card.Header><Card.Title>{data.Name}</Card.Title></Card.Header>
                                 <Card.Body>
                                     <ListGroup variant="flush" >
-                                        {Object.keys(data)?.map((desc, descKey) => {
+                                        {Object.keys(data)?.filter(title => title !== "Name").map((desc, descKey) => {
                                             return(
                                                 <ListGroup.Item key={descKey}><strong>{desc}:</strong> {data[desc]}</ListGroup.Item>
                                             )

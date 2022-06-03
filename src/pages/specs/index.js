@@ -34,7 +34,7 @@ class index extends React.Component {
                                 <Card.Header><Card.Title>{data.Name}</Card.Title></Card.Header>
                                 <Card.Body>
                                     <ListGroup variant="flush" >
-                                        {Object.keys(data)?.map((desc, descKey) => {
+                                        {Object.keys(data)?.filter(title => title !== "Name").map((desc, descKey) => {
                                             return(
                                                 <ListGroup.Item key={descKey}><strong>{desc}:</strong> {data[desc]}</ListGroup.Item>
                                             )
