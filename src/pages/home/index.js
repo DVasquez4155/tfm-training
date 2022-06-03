@@ -8,22 +8,38 @@ import { Link, Outlet } from "react-router-dom";
 function Nav(props) {
     return (
         <>
-            <CardGroup>
-                <Card>
-                    <Card.Header>
-                        <Card.Title>Food Menu Items</Card.Title>
-                    </Card.Header>
-                    <Card.Body>
-                        <Card.Text>
-                        Find the list of ingredients of each menu item
-                        </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        <Link variant="outline-*" className="navbar-brand logo" to="/food"><Button variant="primary">View</Button></Link>
-                        
-                    </Card.Footer>
-                </Card>
-                <Card >
+        <CardGroup>
+            <Card className="m-3">
+                <Card.Header>
+                    <Card.Title>Food Menu Items</Card.Title>
+                </Card.Header>
+                <Card.Body>
+                    <Card.Text>
+                    Find the list of ingredients of each menu item
+                    </Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                    <Link variant="outline-*" className="navbar-brand logo" to="/food"><Button variant="primary">View</Button></Link>
+                    
+                </Card.Footer>
+            </Card>
+            <Card className="m-3">
+                <Card.Header>
+                    <Card.Title>Cocktail Menu Items</Card.Title>
+                </Card.Header>
+                <Card.Body>
+                    <Card.Text>
+                    Find the list of ingredients and serving sizes for our cocktail items
+                    </Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                    <Link variant="outline-*" className="navbar-brand logo" to="/cocktail"><Button variant="primary">View</Button></Link>
+                </Card.Footer>
+            </Card>
+        </CardGroup>
+        
+        <CardGroup>
+                <Card  className="m-3">
                     <Card.Header>
                         <Card.Title>Fish Specifications</Card.Title>
                     </Card.Header>
@@ -36,20 +52,7 @@ function Nav(props) {
                         <Link variant="outline-*" className="navbar-brand logo" to="/specs"><Button variant="primary">View</Button></Link>
                     </Card.Footer>
                 </Card>
-                <Card>
-                    <Card.Header>
-                        <Card.Title>Cocktail Menu Items</Card.Title>
-                    </Card.Header>
-                    <Card.Body>
-                        <Card.Text>
-                        Find the list of ingredients and serving sizes for our cocktail items
-                        </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        <Link variant="outline-*" className="navbar-brand logo" to="/cocktail"><Button variant="primary">View</Button></Link>
-                    </Card.Footer>
-                </Card>
-                <Card>
+                <Card  className="m-3">
                     <Card.Header>
                         <Card.Title>Wine Menu Items</Card.Title>
                     </Card.Header>
@@ -63,7 +66,6 @@ function Nav(props) {
                     </Card.Footer>
                 </Card>
             </CardGroup>
-            <Outlet />
         </>
     );
 }

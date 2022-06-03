@@ -30,7 +30,7 @@ class index extends React.Component {
                     {specs[this.state.value]?.map((data, key) => {
                         return (
                             <div className="col-sm-4" key={key}>
-                            <Card bg={"Light"}>
+                            <Card className="m-3" bg={"Light"}>
                                 <Card.Header><Card.Title>{data.Name}</Card.Title></Card.Header>
                                 <Card.Body>
                                     <ListGroup variant="flush" >

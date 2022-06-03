@@ -1,7 +1,7 @@
 import React from "react";
 // import Button from 'react-bootstrap/Button';
 
-function Nav(props) {
+function Index(props) {
     return (
         <main>
             <header className="App-header">
@@ -11,4 +11,4 @@ function Nav(props) {
     );
 }
 
-export default Nav;
+export default Index;
