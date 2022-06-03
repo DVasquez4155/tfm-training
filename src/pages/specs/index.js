@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Form, ListGroup } from "react-bootstrap";
 // import Button from 'react-bootstrap/Button';
-import specs from '../../files/fish.json';
+import specs from '../../db/fish.json';
 
 class index extends React.Component {
     constructor(props) {
@@ -16,15 +16,15 @@ class index extends React.Component {
     render() {
         return (
             <>
-            <Form.Select aria-label="Default select example" onChange={this.handleChange}>
-                <option value="Crustacean">Crustacean</option>
-                <option value="FinFish">FinFish</option>
-                <option value="Shellfish">Shellfish</option>
-                <option value="Calamari">Calamari</option>
-                <option value="Smoked">Smoked</option>
-                <option value="Oysters">Oysters</option>
-            </Form.Select>
-            <br />
+                <Form.Select aria-label="Default select example" onChange={this.handleChange}>
+                    <option value="Crustacean">Crustacean</option>
+                    <option value="FinFish">FinFish</option>
+                    <option value="Shellfish">Shellfish</option>
+                    <option value="Calamari">Calamari</option>
+                    <option value="Smoked">Smoked</option>
+                    <option value="Oysters">Oysters</option>
+                </Form.Select>
+                <br />
                 <div className="row">
                     
                     {specs[this.state.value]?.map((data, key) => {
@@ -34,15 +34,11 @@ class index extends React.Component {
                                 <Card.Header><Card.Title>{data.Name}</Card.Title></Card.Header>
                                 <Card.Body>
                                     <ListGroup variant="flush" >
-                                        <ListGroup.Item><strong>Origin:</strong> {data.Origin}</ListGroup.Item>
-                                        <ListGroup.Item><strong>Similar To:</strong> {data["Similar to"]}</ListGroup.Item>
-                                        <ListGroup.Item><strong>Color:</strong> {data.Color}</ListGroup.Item>
-                                        <ListGroup.Item><strong>Flavor:</strong> {data.Flavor}</ListGroup.Item>
-                                        <ListGroup.Item><strong>Texture:</strong> {data.Texture}</ListGroup.Item>
-                                        <ListGroup.Item><strong>Marketable Name:</strong> {data["Marketable Name"]}</ListGroup.Item>
-                                        <ListGroup.Item><strong>Family:</strong> {data.Family}</ListGroup.Item>
-                                        <ListGroup.Item><strong>Size:</strong> {data.Size}</ListGroup.Item>
-                                        <ListGroup.Item><strong>Fun Facts:</strong> {data["Fun facts"]}</ListGroup.Item>
+                                        {Object.keys(data)?.map((desc, descKey) => {
+                                            return(
+                                                <ListGroup.Item key={descKey}><strong>{desc}:</strong> {data[desc]}</ListGroup.Item>
+                                            )
+                                        })}
                                     </ListGroup>
                                 </Card.Body>
                             </Card>
