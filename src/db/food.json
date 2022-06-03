@@ -29,8 +29,8 @@
         },
         {
             "Name": "Shucked Oysters (6)",
-            "Kumiai Oysters": "MX",
-            "Chesapeake Oysters": "Lower James River, VA",
+            "/Oysters/Kumiai Oysters": "Pacific Oysters",
+            "/Oysters/Chesapeake Oysters": "Lower James River, VA",
             "Oyster Combo": "3 of each oysters"
         }
     ],
