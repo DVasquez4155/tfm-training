@@ -20,6 +20,9 @@ class index extends React.Component {
         paths.shift();
         const path = fish[paths[0]];
         var result = "";
+        if (path === undefined) {
+            return paths[1];
+        }
         path.forEach(item => {
             if (item.Name === paths[1]) {
                 result = <Modal props={item} />
