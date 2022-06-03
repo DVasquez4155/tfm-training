@@ -2,16 +2,30 @@ import React from "react";
 import { Card, Form, ListGroup } from "react-bootstrap";
 // import Button from 'react-bootstrap/Button';
 import specs from '../../db/food.json';
+import fish from '../../db/fish.json';
+import Modal from "../../components/Modal";
 
 class index extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {value: 'Testing'};
+        this.state = {value: 'Bread & Chowder'};
 
         this.handleChange = this.handleChange.bind(this);
     }
     handleChange(event) {
         this.setState({value: event.target.value});
+    }
+    findIngredient(ingredient) {
+        const paths = ingredient.split("/");
+        paths.shift();
+        const path = fish[paths[0]];
+        var result = "";
+        path.forEach(item => {
+            if (item.Name === paths[1]) {
+                result = <Modal props={item} />
+            }
+        })
+        return result;
     }
     render() {
         return (
@@ -35,7 +49,18 @@ class index extends React.Component {
                                     <ListGroup variant="flush" >
                                         {Object.keys(data)?.filter(title => title !== "Name").map((desc, descKey) => {
                                             return(
-                                                <ListGroup.Item key={descKey}><strong>{desc}:</strong> {data[desc]}</ListGroup.Item>
+                                                <ListGroup.Item key={descKey}>
+                                                    <strong>
+                                                        {desc.startsWith("/") ? (
+                                                            <>
+                                                                {this.findIngredient(desc)}
+                                                            </>
+                                                        ) : (
+                                                            <>{desc}</>
+                                                        )}
+                                                    : </strong>
+                                                    {data[desc]}
+                                                </ListGroup.Item>
                                             )
                                         })}
                                     </ListGroup>
