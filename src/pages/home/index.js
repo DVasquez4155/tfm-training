@@ -2,7 +2,7 @@ import React from "react";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { CardGroup } from "react-bootstrap";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 function Nav(props) {
