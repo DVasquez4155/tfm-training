@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 import Home from "./pages/home";
 import Food from "./pages/food";
 import Specs from "./pages/specs";
@@ -29,11 +30,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
-      <div className="col-lg-8 mx-auto p-3 py-md-5">
-        <footer className="pt-5 my-5 text-muted border-top">
-          Created by Daniel Vasquez · © 2022
-        </footer>
-      </div>
+      <Footer />
     </HashRouter>
   );
 }
