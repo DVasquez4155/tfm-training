@@ -1,10 +1,9 @@
 import React from "react";
-import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 
 require('./index.css')
 
-function Nav(props) {
+function Index(props) {
     return (
         <main>
         <nav className="navbar navbar-dark navbar-expand-lg bg-dark ">
@@ -14,6 +13,8 @@ function Nav(props) {
                 <ul id="links" className="nav  ml-auto">
                     <Link variant="outline-*" className="nav-link" to="/">Home</Link>
                     <a variant="outline-*" className="nav-link" href="https://dvasquez4155.github.io/Closing-Report/">Closing Report</a>
+                    <a variant="outline-*" className="nav-link" href="https://dvasquez4155.github.io/tfm-training/">Training</a>
+                    <Link variant="outline-*" className="nav-link" to="/">Server Party Splitting</Link>
                     {/* <Link variant="outline-*" className="nav-link" to="/">Testing</Link> */}
                 </ul>
                 </div>
@@ -23,4 +24,4 @@ function Nav(props) {
     );
 }
 
-export default Nav;
+export default Index;
