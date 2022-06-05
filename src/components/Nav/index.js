@@ -14,7 +14,7 @@ function Index(props) {
                     <Link variant="outline-*" className="nav-link" to="/">Home</Link>
                     <a variant="outline-*" className="nav-link" href="https://dvasquez4155.github.io/Closing-Report/">Closing Report</a>
                     <a variant="outline-*" className="nav-link" href="https://dvasquez4155.github.io/tfm-training/">Training</a>
-                    <Link variant="outline-*" className="nav-link" to="/">Server Party Splitting</Link>
+                    <a variant="outline-*" className="nav-link" href="https://dvasquez4155.github.io/seerver-party-splitting/">Server Party Splitting</a>
                     {/* <Link variant="outline-*" className="nav-link" to="/">Testing</Link> */}
                 </ul>
                 </div>
