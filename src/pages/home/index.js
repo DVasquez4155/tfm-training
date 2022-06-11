@@ -5,7 +5,7 @@ import { CardGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 
-function Nav(props) {
+function Index(props) {
     return (
         <>
         <CardGroup>
@@ -26,7 +26,7 @@ function Nav(props) {
                     
                 </Card.Footer>
             </Card>
-            <Card className="m-3">
+            {/* <Card className="m-3">
                 <Card.Header>
                     <Card.Title>Cocktail Menu Items</Card.Title>
                 </Card.Header>
@@ -38,7 +38,7 @@ function Nav(props) {
                 <Card.Footer>
                     <Link variant="outline-*" className="navbar-brand logo" to="/cocktail"><Button variant="primary">View</Button></Link>
                 </Card.Footer>
-            </Card>
+            </Card> */}
         </CardGroup>
         
         <CardGroup>
@@ -73,4 +73,4 @@ function Nav(props) {
     );
 }
 
-export default Nav;
+export default Index;
