@@ -40,7 +40,7 @@ class index extends React.Component {
         }
         path.forEach(item => {
             if (item.Name === paths[1]) {
-                result = <Modal props={item} path={paths}/>
+                result = <Modal props={item} path={"/fish" + ingredient}/>
             }
         })
         return result;
