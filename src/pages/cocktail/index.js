@@ -80,14 +80,19 @@ class index extends React.Component {
                                 {data}
                             </h1>
                         
-                            {this.state.cocktail[data]?.map((data, key1) => {
+                            {this.state.cocktail[data]?.map((data1, key1) => {
                                 return (
                                     <div className="col-sm-4" key={key1}>
                                     <Card className="m-1" bg={"Light"}>
-                                        <Card.Header><Card.Title>{data.Name}</Card.Title></Card.Header>
+                                        
+                                        <Card.Img onError={({ currentTarget }) => {
+                                        currentTarget.onerror = null;
+                                        currentTarget.src="https://dvasquez4155.github.io/TFM/photos/NA.png";
+                                        }} variant="top" src={"https://dvasquez4155.github.io/TFM/photos/cocktail/" + data + "/" + data1.Name + ".png"} />
+                                        <Card.Header><Card.Title>{data1.Name}</Card.Title></Card.Header>
                                         <Card.Body>
                                             <ListGroup variant="flush" >
-                                                {Object.keys(data)?.filter(title => title !== "Name").map((desc, descKey) => {
+                                                {Object.keys(data1)?.filter(title => title !== "Name").map((desc, descKey) => {
                                                     return(
                                                         <ListGroup.Item key={descKey}>
                                                             <strong>
@@ -99,7 +104,7 @@ class index extends React.Component {
                                                                     <>{desc}</>
                                                                 )}
                                                             : </strong>
-                                                            {data[desc]}
+                                                            {data1[desc]}
                                                         </ListGroup.Item>
                                                         )
                                                 })}
