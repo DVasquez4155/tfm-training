@@ -12,9 +12,6 @@ function Index(props) {
                 <div id="navbarNav">
                 <ul id="links" className="nav  ml-auto">
                     <Link variant="outline-*" className="nav-link" to="/">Home</Link>
-                    <a variant="outline-*" className="nav-link" href="https://dvasquez4155.github.io/Closing-Report/">Closing Report</a>
-                    <a variant="outline-*" className="nav-link" href="https://dvasquez4155.github.io/tfm-training/">Training</a>
-                    <a variant="outline-*" className="nav-link" href="https://dvasquez4155.github.io/server-party-splitting/">Server Party Splitting</a>
                     {/* <Link variant="outline-*" className="nav-link" to="/">Testing</Link> */}
                 </ul>
                 </div>
