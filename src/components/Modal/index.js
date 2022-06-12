@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, ListGroup, Modal } from "react-bootstrap";
+import { Button, Image, ListGroup, Modal } from "react-bootstrap";
 import './index.css';
 
 function Index(props) {
@@ -18,6 +18,12 @@ function Index(props) {
             </Modal.Header>
             <Modal.Body>
                 <ListGroup variant="flush" >
+                <ListGroup.Item>
+                    <Image fluid onError={({ currentTarget }) => {
+                        currentTarget.onerror = null;
+                        currentTarget.src="https://dvasquez4155.github.io/TFM/photos/NA.png";
+                        }} variant="top" src={"https://dvasquez4155.github.io/TFM/photos/" + props.path[0] + "/" + props.path[1] + ".jpg"} />
+                </ListGroup.Item>
                     {Object.keys(props.props).filter(title => title !== "Name").map((desc, descKey) => {
                         return(
                             <ListGroup.Item key={descKey}>
