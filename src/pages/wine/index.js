@@ -1,23 +1,49 @@
 import React from "react";
 import { Card, Form, ListGroup } from "react-bootstrap";
-// import Button from 'react-bootstrap/Button';
-import specs from '../../db/wine.json';
+import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
+import DB from "../../utils/db";
 
 class index extends React.Component {
+    state = {
+        wine: [],
+        value: "all"
+    }
+    componentDidMount() {
+        DB.getWine()
+        .then((res) => {
+            this.setState({wine: res.data})
+        })
+        .catch((err) => console.log(err));
+    }
+
     constructor(props) {
         super(props);
-        this.state = {value: 'Chardonnay'};
-
         this.handleChange = this.handleChange.bind(this);
     }
     handleChange(event) {
         this.setState({value: event.target.value});
     }
+    checkIfAllFilter(value) {
+        if (value === "all") {
+            return Object.keys(this.state.wine);
+        }
+        else {
+            return [value];
+        }
+    }
     render() {
         return (
             <>
-                <Form.Select aria-label="Default select example" onChange={this.handleChange}>
-                    {Object.keys(specs).map((desc, descKey) => {
+                <div className="col-12" >
+                    <Link variant="outline-*" className="navbar-brand logo" to="/">
+                        <Button className='p-2 w-100' variant="primary">Return</Button>
+                    </Link>
+                </div>
+                <br />
+                <Form.Select className="selectpicker" aria-label="Default select example" onChange={this.handleChange}>
+                    <option value="all">All</option>
+                    {Object.keys(this.state.wine).map((desc, descKey) => {
                         return(
                             <option key={descKey} value={desc}>{desc}</option>
                         )
@@ -25,26 +51,34 @@ class index extends React.Component {
                     })}
                 </Form.Select>
                 <br />
-                <div className="row">
-                    {specs[this.state.value]?.map((data, key) => {
-                        return (
-                            <div className="col-sm-4" key={key}>
-                            <Card className="m-1" bg={"Light"}>
-                                <Card.Header><Card.Title>{data.Name}</Card.Title></Card.Header>
-                                <Card.Body>
-                                    <ListGroup variant="flush" >
-                                        {Object.keys(data)?.filter(title => title !== "Name").map((desc, descKey) => {
-                                            return(
-                                                <ListGroup.Item key={descKey}><strong>{desc}:</strong> {data[desc]}</ListGroup.Item>
-                                            )
-                                        })}
-                                    </ListGroup>
-                                </Card.Body>
-                            </Card>
-                            </div>
-                        );
-                    })}
-                </div>
+                {this.checkIfAllFilter(this.state.value).map((data,key) => {
+                    return (
+                        <div key={key} className="row">
+                            <h1>
+                                {data}
+                            </h1>
+                        
+                            {this.state.wine[data]?.map((data, key1) => {
+                                return (
+                                    <div className="col-sm-4" key={key1}>
+                                    <Card className="m-1" bg={"Light"}>
+                                        <Card.Header><Card.Title>{data.Name}</Card.Title></Card.Header>
+                                        <Card.Body>
+                                            <ListGroup variant="flush" >
+                                                {Object.keys(data)?.filter(title => title !== "Name").map((desc, descKey) => {
+                                                    return(
+                                                        <ListGroup.Item key={descKey}><strong>{desc}:</strong> {data[desc]}</ListGroup.Item>
+                                                    )
+                                                })}
+                                            </ListGroup>
+                                        </Card.Body>
+                                    </Card>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    )
+                })}
             </>
         )
     }
