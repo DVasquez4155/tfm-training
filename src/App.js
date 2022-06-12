@@ -12,7 +12,7 @@ import Food from "./pages/food";
 import Specs from "./pages/specs";
 import Cocktail from "./pages/cocktail";
 import Wine from "./pages/wine";
-import Liqour from "./pages/liqour";
+import Liquor from "./pages/liquor";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
           <Route path="specs" element={<Specs />} />
           <Route path="cocktail" element={<Cocktail />} />
           <Route path="wine" element={<Wine />} />
-          <Route path="liqour" element={<Liqour />} />
+          <Route path="liquor" element={<Liquor />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
