@@ -6,13 +6,13 @@ import DB from "../../utils/db";
 
 class index extends React.Component {
     state = {
-        wine: [],
+        specs: [],
         value: "all"
     }
     componentDidMount() {
         DB.getWine()
         .then((res) => {
-            this.setState({wine: res.data})
+            this.setState({specs: res.data})
         })
         .catch((err) => console.log(err));
     }
@@ -26,7 +26,7 @@ class index extends React.Component {
     }
     checkIfAllFilter(value) {
         if (value === "all") {
-            return Object.keys(this.state.wine);
+            return Object.keys(this.state.specs);
         }
         else {
             return [value];
@@ -43,7 +43,7 @@ class index extends React.Component {
                 <br />
                 <Form.Select className="selectpicker" aria-label="Default select example" onChange={this.handleChange}>
                     <option value="all">All</option>
-                    {Object.keys(this.state.wine).map((desc, descKey) => {
+                    {Object.keys(this.state.specs).map((desc, descKey) => {
                         return(
                             <option key={descKey} value={desc}>{desc}</option>
                         )
@@ -58,7 +58,7 @@ class index extends React.Component {
                                 {data}
                             </h1>
                         
-                            {this.state.wine[data]?.map((data, key1) => {
+                            {this.state.specs[data]?.map((data, key1) => {
                                 return (
                                     <div className="col-sm-4" key={key1}>
                                     <Card className="m-1" bg={"Light"}>

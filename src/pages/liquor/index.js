@@ -1,6 +1,7 @@
 import React from "react";
-import { Button, Card, Form, ListGroup } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Card, Form, ListGroup } from "react-bootstrap";
+import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom"; 
 import DB from "../../utils/db";
 
 class index extends React.Component {
@@ -9,9 +10,8 @@ class index extends React.Component {
         value: "all"
     }
     componentDidMount() {
-        DB.getFish()
+        DB.getLiquor()
         .then((res) => {
-            // this.state.specs =  res.data
             this.setState({specs: res.data})
         })
         .catch((err) => console.log(err));
@@ -41,7 +41,8 @@ class index extends React.Component {
                     </Link>
                 </div>
                 <br />
-                <Form.Select aria-label="Default select example" onChange={this.handleChange}>
+                <Form.Select className="selectpicker" aria-label="Default select example" onChange={this.handleChange}>
+                    <option value="all">All</option>
                     {Object.keys(this.state.specs).map((desc, descKey) => {
                         return(
                             <option key={descKey} value={desc}>{desc}</option>
