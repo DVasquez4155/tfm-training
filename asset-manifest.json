@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/tfm-training/static/css/main.e7b8df34.css",
-    "main.js": "/tfm-training/static/js/main.9f10c019.js",
+    "main.js": "/tfm-training/static/js/main.af8f1772.js",
     "static/js/787.ac30881b.chunk.js": "/tfm-training/static/js/787.ac30881b.chunk.js",
     "index.html": "/tfm-training/index.html",
     "main.e7b8df34.css.map": "/tfm-training/static/css/main.e7b8df34.css.map",
-    "main.9f10c019.js.map": "/tfm-training/static/js/main.9f10c019.js.map",
+    "main.af8f1772.js.map": "/tfm-training/static/js/main.af8f1772.js.map",
     "787.ac30881b.chunk.js.map": "/tfm-training/static/js/787.ac30881b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e7b8df34.css",
-    "static/js/main.9f10c019.js"
+    "static/js/main.af8f1772.js"
   ]
 }
