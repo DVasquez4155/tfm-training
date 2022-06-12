@@ -1,13 +1,23 @@
 import React from "react";
 import { Card, Form, ListGroup } from "react-bootstrap";
-// import Button from 'react-bootstrap/Button';
-import specs from '../../db/fish.json';
+import DB from "../../utils/db";
 
 class index extends React.Component {
+    state = {
+        specs: [],
+        value: "Crustacean"
+    }
+    componentDidMount() {
+        DB.getFish()
+        .then((res) => {
+            // this.state.specs =  res.data
+            this.setState({specs: res.data})
+        })
+        .catch((err) => console.log(err));
+    }
+
     constructor(props) {
         super(props);
-        this.state = {value: 'Crustacean'};
-
         this.handleChange = this.handleChange.bind(this);
     }
     handleChange(event) {
@@ -17,7 +27,7 @@ class index extends React.Component {
         return (
             <>
                 <Form.Select aria-label="Default select example" onChange={this.handleChange}>
-                    {Object.keys(specs).map((desc, descKey) => {
+                    {Object.keys(this.state.specs).map((desc, descKey) => {
                         return(
                             <option key={descKey} value={desc}>{desc}</option>
                         )
@@ -26,7 +36,7 @@ class index extends React.Component {
                 </Form.Select>
                 <br />
                 <div className="row">
-                    {specs[this.state.value]?.map((data, key) => {
+                    {this.state.specs[this.state.value]?.map((data, key) => {
                         return (
                             <div className="col-sm-4" key={key}>
                             <Card className="m-1" bg={"Light"}>

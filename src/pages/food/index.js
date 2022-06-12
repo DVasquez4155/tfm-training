@@ -1,15 +1,29 @@
 import React from "react";
 import { Card, Form, ListGroup } from "react-bootstrap";
-// import Button from 'react-bootstrap/Button';
-import specs from '../../db/food.json';
-import fish from '../../db/fish.json';
 import Modal from "../../components/Modal";
+import DB from "../../utils/db";
 
 class index extends React.Component {
+    state = {
+        food: [],
+        specs: [],
+        value: "Bread & Chowder"
+    }
+    componentDidMount() {
+        DB.getFish()
+        .then((res) => {
+            this.setState({specs: res.data})
+        })
+        .catch((err) => console.log(err));
+        DB.getFood()
+        .then((res) => {
+            this.setState({food: res.data})
+        })
+        .catch((err) => console.log(err));
+    }
+
     constructor(props) {
         super(props);
-        this.state = {value: 'Bread & Chowder'};
-
         this.handleChange = this.handleChange.bind(this);
     }
     handleChange(event) {
@@ -18,7 +32,7 @@ class index extends React.Component {
     findIngredient(ingredient) {
         const paths = ingredient.split("/");
         paths.shift();
-        const path = fish[paths[0]];
+        const path = this.state.specs[paths[0]];
         var result = "";
         if (path === undefined) {
             return paths[1];
@@ -30,11 +44,12 @@ class index extends React.Component {
         })
         return result;
     }
+    
     render() {
         return (
             <>
                 <Form.Select aria-label="Default select example" onChange={this.handleChange}>
-                    {Object.keys(specs).map((desc, descKey) => {
+                    {Object.keys(this.state.food).map((desc, descKey) => {
                         return(
                             <option key={descKey} value={desc}>{desc}</option>
                         )
@@ -43,7 +58,7 @@ class index extends React.Component {
                 </Form.Select>
                 <br />
                 <div className="row">
-                    {specs[this.state.value]?.map((data, key) => {
+                    {this.state.food[this.state.value]?.map((data, key) => {
                         return (
                             <div className="col-sm-4" key={key}>
                             <Card className="m-1" bg={"Light"}>
