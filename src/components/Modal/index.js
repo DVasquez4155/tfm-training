@@ -22,7 +22,7 @@ function Index(props) {
                     <Image fluid onError={({ currentTarget }) => {
                         currentTarget.onerror = null;
                         currentTarget.src="https://dvasquez4155.github.io/TFM/photos/NA.png";
-                        }} variant="top" src={"https://dvasquez4155.github.io/TFM/photos/" + props.path[0] + "/" + props.path[1] + ".jpg"} />
+                        }} variant="top" src={"https://dvasquez4155.github.io/TFM/photos/fish/" + props.path[0] + "/" + props.path[1] + ".jpg"} />
                 </ListGroup.Item>
                     {Object.keys(props.props).filter(title => title !== "Name").map((desc, descKey) => {
                         return(
