@@ -42,6 +42,7 @@ class index extends React.Component {
                 </div>
                 <br />
                 <Form.Select aria-label="Default select example" onChange={this.handleChange}>
+                    <option value="all">All</option>
                     {Object.keys(this.state.specs).map((desc, descKey) => {
                         return(
                             <option key={descKey} value={desc}>{desc}</option>
@@ -64,7 +65,7 @@ class index extends React.Component {
                                         <Card.Img onError={({ currentTarget }) => {
                                                 currentTarget.onerror = null;
                                                 currentTarget.src="https://dvasquez4155.github.io/TFM/photos/NA.png";
-                                                }} variant="top" src={"https://dvasquez4155.github.io/TFM/photos/fish/" + data + "/" + data1.Name + ".jpg"} />
+                                                }} variant="top" src={"https://dvasquez4155.github.io/TFM/photos/fish/" + data + "/" + data1.Name + ".png"} />
                                         <Card.Header><Card.Title>{data1.Name}</Card.Title></Card.Header>
                                         <Card.Body>
                                             <ListGroup variant="flush" >
