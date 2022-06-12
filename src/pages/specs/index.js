@@ -20,7 +20,6 @@ class index extends React.Component {
     constructor(props) {
         super(props);
         this.handleChange = this.handleChange.bind(this);
-        this.onPhotoError = this.onPhotoError.bind(this);
     }
     handleChange(event) {
         this.setState({value: event.target.value});
